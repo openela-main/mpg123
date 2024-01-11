@@ -1,0 +1,24 @@
+diff -ru mpg123-1.25.10/configure mpg123-1.25.10.new/configure
+--- mpg123-1.25.10/configure	2018-02-27 11:34:50.000000000 +0100
++++ mpg123-1.25.10.new/configure	2018-10-09 12:29:07.453261885 +0200
+@@ -17108,7 +17108,7 @@
+ 			YASM_FORMAT="-f macho"
+ 		;;
+ 		*)
+-			YASM_FORMAT="-f elf"
++			YASM_FORMAT="-f elf -g dwarf2"
+ 		;;
+ 	esac
+ 
+diff -ru mpg123-1.25.10/configure.ac mpg123-1.25.10.new/configure.ac
+--- mpg123-1.25.10/configure.ac	2018-02-27 11:34:27.000000000 +0100
++++ mpg123-1.25.10.new/configure.ac	2018-10-09 12:28:55.938492240 +0200
+@@ -1471,7 +1471,7 @@
+ 			YASM_FORMAT="-f macho"
+ 		;;
+ 		*)
+-			YASM_FORMAT="-f elf"
++			YASM_FORMAT="-f elf -g dwarf2"
+ 		;;
+ 	esac
+ 	AC_DEFINE(USE_YASM_FOR_AVX, 1, [Define to use yasm for assemble AVX sources.])
