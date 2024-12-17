@@ -1,9 +1,10 @@
 %global out out123
 %global fmt fmt123
+%global syn syn123
 
 Name:           mpg123
-Version:        1.25.10
-Release:        2%{?dist}
+Version:        1.32.9
+Release:        1%{?dist}
 Summary:        Real time MPEG 1.0/2.0/2.5 audio player/decoder for layers 1, 2 and 3
 
 License:        LGPLv2+
@@ -146,18 +147,26 @@ rm %{buildroot}%{_libdir}/*.la
 %doc NEWS
 %{_libdir}/lib%{name}.so.0*
 %{_libdir}/lib%{out}.so.0*
+%{_libdir}/lib%{syn}.so.0*
 
 %files devel
 %doc NEWS.lib%{name} doc/html doc/examples doc/BENCHMARKING doc/README.gain
 %{_includedir}/%{name}.h
 %{_includedir}/%{out}.h
 %{_includedir}/%{fmt}.h
+%{_includedir}/%{syn}.h
 %{_libdir}/lib%{name}.so
 %{_libdir}/lib%{out}.so
+%{_libdir}/lib%{syn}.so
 %{_libdir}/pkgconfig/lib%{name}.pc
 %{_libdir}/pkgconfig/lib%{out}.pc
+%{_libdir}/pkgconfig/lib%{syn}.pc
 
 %changelog
+* Mon Dec 02 2024 Wim Taymans <wtaymans@redhat.com> - 1.25.10-2
+- Rebase to 1.32.9, includes patch for CVE-2024-10573
+- Resolves: RHEL-65443
+
 * Tue Oct 09 2018 Wim Taymans <wtaymans@redhat.com> - 1.25.10-2
 - Add dwarf2 debug symbols to yasm output
 - Resolves: #1630598
