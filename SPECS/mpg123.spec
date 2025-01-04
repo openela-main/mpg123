@@ -3,8 +3,8 @@
 %global syn syn123
 
 Name:           mpg123
-Version:        1.26.2
-Release:        5%{?dist}
+Version:        1.32.9
+Release:        1%{?dist}
 Summary:        Real time MPEG 1.0/2.0/2.5 audio player/decoder for layers 1, 2 and 3
 
 License:        LGPLv2+
@@ -162,6 +162,10 @@ rm %{buildroot}%{_libdir}/*.la
 %{_libdir}/pkgconfig/lib%{syn}.pc
 
 %changelog
+* Mon Dec 02 2024 Wim Taymans <wtaymans@redhat.com> - 1.32.9-1
+- Rebase to 1.32.9, includes patch for CVE-2024-10573
+  Resolves: RHEL-65444
+
 * Mon Aug 09 2021 Mohan Boddu <mboddu@redhat.com> - 1.26.2-5
 - Rebuilt for IMA sigs, glibc 2.34, aarch64 flags
   Related: rhbz#1991688
